@@ -7,464 +7,529 @@
   <link rel="icon" href="./assets/checkmark.png" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
+  <link href="style.css" rel="stylesheet" />
+  <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
 </head>
 
-<body>
-  <nav id="desktop-nav">
-    <div class="logo">Mahamat Cherif</div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="#about">A Propos</a></li>
-        <li><a href="#experience">Expérience</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
+<body class="font-poppins bg-gray-50 text-gray-900">
+  <!-- Navigation -->
+  <nav id="desktop-nav" class="fixed top-0 w-full bg-white shadow-md z-50">
+    <div class="container mx-auto flex justify-between items-center h-20 px-4">
+      <div class="logo text-2xl font-bold">
+        <a href="/">Mahamat Cherif</a>
+      </div>
+      <ul class="nav-links flex space-x-8 text-lg">
+        <li><a href="#about" class="hover:text-gray-600">A Propos</a></li>
+        <li><a href="#experience" class="hover:text-gray-600">Expérience</a></li>
+        <li><a href="#projects" class="hover:text-gray-600">Projets</a></li>
+        <li><a href="#contact" class="hover:text-gray-600">Contact</a></li>
       </ul>
     </div>
   </nav>
-  <nav id="hamburger-nav">
-    <div class="logo">Mahamat Cherif</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+  <!-- Hamburger Navigation -->
+  <nav id="hamburger-nav" class="fixed top-0 w-full bg-white shadow-md z-50 lg:hidden">
+    <div class="container mx-auto flex justify-between items-center h-20 px-4">
+      <div class="logo text-2xl font-bold">
+        <a href="/">Mahamat Cherif</a>
       </div>
-      <div class="menu-links">
-        <li><a href="#about" onclick="toggleMenu()">A Propos</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Expérience</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projets</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon space-y-2 cursor-pointer" onclick="toggleMenu()">
+          <span class="block w-8 h-1 bg-gray-900"></span>
+          <span class="block w-8 h-1 bg-gray-900"></span>
+          <span class="block w-8 h-1 bg-gray-900"></span>
+        </div>
+        <div class="menu-links hidden absolute top-20 right-0 bg-white shadow-lg w-48">
+          <ul class="space-y-4 p-6">
+            <li><a href="#about" class="block hover:text-gray-600" onclick="toggleMenu()">A Propos</a></li>
+            <li><a href="#experience" class="block hover:text-gray-600" onclick="toggleMenu()">Expérience</a></li>
+            <li><a href="#projects" class="block hover:text-gray-600" onclick="toggleMenu()">Projets</a></li>
+            <li><a href="#contact" class="block hover:text-gray-600" onclick="toggleMenu()">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
-  <section id="profile">
-    <div class="section__pic-container">
-      <img src="./assets/profile-pic.jpg" alt="cherif profile picture" />
-    </div>
-    <div class="section__text">
-      <p class="section__text__p1">Hello, Je suis</p>
-      <h1 class="title">Mahamat Cherif</h1>
-      <p class="section__text__p2">Data scientist | Développeur Full-stack</p>
-      <div class="btn-container">
-        <button class="btn btn-color-2" onclick="window.open('./assets/cherifissa_cv.pdf')">
-          Télécharger mon CV
-        </button>
-        <button class="btn btn-color-1" onclick="location.href='./#contact'">
-          Contact Info
-        </button>
-      </div>
-      <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-          onclick="location.href='https://www.linkedin.com/in/cherif-issa-mahamat-769336214/'" />
-        <img src="./assets/github.png" alt="My Github profile" class="icon"
-          onclick="location.href='https://github.com/cherifissa'" />
-      </div>
+  <!-- Profile Section -->
+  <section id="profile" class="min-h-screen flex items-center justify-center py-20">
+    <div class="container mx-auto flex flex-col lg:flex-row items-center gap-16 px-4">
+      <div class="section__pic-container">
+        <img src="./assets/profile-pic.jpg" alt="cherif profile picture" class="rounded-full w-84 h-84 object-cover" />
+        </div>
+      <div class="section__text text-center lg:text-left">
+        <p class="text-lg text-gray-600">Hello, Je suis</p>
+        <h1 class="text-5xl font-bold mt-2">Mahamat Cherif</h1>
+        <p class="text-xl text-gray-600 mt-4">Data scientist | Développeur Full-stack</p>
+        <div class="btn-container flex gap-4 mt-8 justify-center lg:justify-start">
+          <button class="btn bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-gray-700 transition-all"
+            onclick="window.open('./assets/cherifissa_cv.pdf')">
+            Télécharger mon CV
+          </button>
+          <button
+            class="btn border border-gray-900 text-gray-900 px-6 py-3 rounded-full hover:bg-gray-900 hover:text-white transition-all"
+            onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+          </div>
+        <div id="socials-container" class="flex gap-4 mt-8 justify-center lg:justify-start">
+          <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon w-8 h-8 cursor-pointer"
+            onclick="location.href='https://www.linkedin.com/in/cherif-issa-mahamat-769336214/'" />
+          <img src="./assets/github.png" alt="My Github profile" class="icon w-8 h-8 cursor-pointer"
+            onclick="location.href='https://github.com/cherifissa'" />
+          </div>
+          </div>
     </div>
   </section>
-  <section id="about">
-    <p class="section__text__p1">Apprenez à en savoir plus sur moi</p>
-    <h1 class="title">a propos de moi </h1>
-    <div class="section-container">
-      <div class="section__pic-container">
-        <img src="./assets/about-pic.jpg" alt="Profile picture" class="about-pic" />
+  <!-- About Section -->
+  <section id="about" class="min-h-screen flex items-center justify-center pb-20">
+    <div class="container mx-auto px-4">
+      <p class="text-lg text-gray-600 text-center">Apprenez à en savoir plus sur moi</p>
+      <h1 class="text-5xl font-bold text-center mt-4">A propos de moi</h1>
+      <div class="section-container flex flex-col lg:flex-row gap-12 mt-12">
+        <div class="section__pic-container">
+          <img src="./assets/about-pic.jpg" alt="Profile picture" class="rounded-2xl w-96 h-96 object-cover" />
+          </div>
+        <div class="about-details-container flex-1">
+          <div class="about-containers grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="details-container bg-white p-6 rounded-2xl shadow-lg">
+              <img src="./assets/experience.png" alt="Experience icon" class="icon w-12 h-12" />
+              <h3 class="text-xl font-bold mt-4">Expérience</h3>
+              <p class="text-gray-600 mt-2">4+ ans <br />Data scientist | Développeur Full-stack</p>
+            </div>
+            <div class="details-container bg-white p-6 rounded-2xl shadow-lg">
+              <img src="./assets/education.png" alt="Education icon" class="icon w-12 h-12" />
+              <h3 class="text-xl font-bold mt-4">Education</h3>
+              <p class="text-gray-600 mt-2">Master en IA & Big data<br /></p>
+            </div>
+            </div>
+          <div class="text-container mt-8">
+            <p class="text-gray-500 leading-relaxed text-justify">
+              Développeur Full Stack passionné et data scientist, je me spécialise dans la création d'applications web
+              et
+              mobiles innovantes. Fort de mes expériences chez Midjo - For all of Africa, ISD Afrik, et lors de mon
+              stage
+              à l'ANATS, j'ai développé une expertise solide en Flutter, Node.js, Laravel, Python, ainsi qu'en gestion
+              de
+              bases de données (MySQL, PostgreSQL). <br><br>
+
+              Guidé par la philosophie « Je ne perds jamais. Soit je gagne, soit j’apprends », je transforme chaque défi
+              en opportunité d'apprentissage. Ma formation en IA et Big Data à l'ESGIS, couplée à une licence en
+              Architecture des Logiciels, me permet d'allier compétences techniques et curiosité pour les nouvelles
+              technologies.<br><br>
+
+              Je m'engage à livrer des solutions performantes et innovantes, en intégrant excellence et amélioration
+              continue dans chaque projet. Mon objectif ? Contribuer à des projets impactants tout en continuant à
+              évoluer
+              professionnellement.
+            </p>
+            </div>
+            </div>
+            </div>
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon w-12 h-12 ml-auto mt-12 cursor-pointer"
+        onclick="location.href='./#experience'" />
       </div>
-      <div class="about-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-            <h3>Expérience</h3>
-            <p>4+ ans <br />Data scientist | Développeur Full-stack</p>
-          </div>
-          <div class="details-container">
-            <img src="./assets/education.png" alt="Education icon" class="icon" />
-            <h3>Education</h3>
-            <p>Master en IA & Big data<br />
-          </div>
-        </div>
-        <div class="text-container">
-          <p>
-            Développeur Full Stack passionné et data scientist, je me spécialise dans la création d'applications web et
-            mobiles innovantes. Fort de mes expériences chez Midjo - For all of Africa, ISD Afrik, et lors de mon stage
-            à l'ANATS, j'ai développé une expertise solide en Flutter, Node.js, Laravel, Python, ainsi qu'en gestion de
-            bases de données (MySQL, PostgreSQL). <br><br>
+  </section>
+  <!-- Experience Section -->
+  <section id="experience" class="min-h-screen flex items-center justify-center py-20">
+    <div class="container mx-auto px-4">
+      <p class="text-lg text-gray-600 text-center">Explorer Moi</p>
+      <h1 class="text-5xl font-bold text-center mt-4">Expérience</h1>
+      <div class="experience-details-container mt-12">
+        <div class="about-containers grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Développement Frontend -->
+          <div class="details-container bg-white p-6 rounded-2xl shadow-lg">
+            <h2 class="text-2xl font-bold">Développement Frontend</h2>
+            <div class="article-container mt-4 space-y-4">
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">HTML & CSS</h3>
+                  <p class="text-gray-600">Expérimenté</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Flutter</h3>
+                  <p class="text-gray-600">Expérimenté</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">PHP</h3>
+                  <p class="text-gray-600">Expérimenté</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">React</h3>
+                  <p class="text-gray-600">Base</p>
+                  </div>
+                  </article>
+                  <article class="flex items-center gap-4">
+                    <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                    <div>
+                      <h3 class="text-lg font-semibold">Tailwind css</h3>
+                      <p class="text-gray-600">Base</p>
+                    </div>
+                  </article>
+                  </div>
+                  </div>
 
-            Guidé par la philosophie « Je ne perds jamais. Soit je gagne, soit j’apprends », je transforme chaque défi
-            en opportunité d'apprentissage. Ma formation en IA et Big Data à l'ESGIS, couplée à une licence en
-            Architecture des Logiciels, me permet d'allier compétences techniques et curiosité pour les nouvelles
-            technologies.<br><br>
+          <!-- Développement Backend -->
+          <div class="details-container bg-white p-6 rounded-2xl shadow-lg">
+            <h2 class="text-2xl font-bold">Développement Backend</h2>
+            <div class="article-container mt-4 space-y-4">
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Node.js</h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Laravel</h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Django</h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Flask</h3>
+                  <p class="text-gray-600">Base</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">FastAPI</h3>
+                  <p class="text-gray-600">Base</p>
+                  </div>
+                  </article>
+                  </div>
+                  </div>
 
-            Je m'engage à livrer des solutions performantes et innovantes, en intégrant excellence et amélioration
-            continue dans chaque projet. Mon objectif ? Contribuer à des projets impactants tout en continuant à évoluer
-            professionnellement.
+          <!-- Intelligence Artificielle (IA) -->
+          <div class="details-container bg-white p-6 rounded-2xl shadow-lg">
+            <h2 class="text-2xl font-bold">Intelligence Artificielle (IA)</h2>
+            <div class="article-container mt-4 space-y-4">
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Python</h3>
+                  <p class="text-gray-600">Expérimenté</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Machine Learning</h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Deep Learning</h3>
+                  <p class="text-gray-600">Base</p>
+                </div>
+              </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Power BI</h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                </div>
+              </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Tableau</h3>
+                  <p class="text-gray-600">Base</p>
+                </div>
+              </article>
+              </div>
+              </div>
 
+          <!-- Base de Données -->
+          <div class="details-container bg-white p-6 rounded-2xl shadow-lg">
+            <h2 class="text-2xl font-bold">Base de Données</h2>
+            <div class="article-container mt-4 space-y-4">
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">MySQL</h3>
+                  <p class="text-gray-600">Expérimenté</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">PostgreSQL</h3>
+                  <p class="text-gray-600">Base</p>
+                  </div>
+              </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">SQLite</h3>
+                  <p class="text-gray-600">Expérimenté</p>
+                </div>
+              </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">MongoDB</h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                  </div>
+              </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">
+                    Redis
+                  </h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                </div>
+              </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">
+                    Microsoft Access
+                  </h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                  </div>
+                  </article>
+            </div>
+            </div>
 
+          <!-- Outils design UI/UX FIgma, canva excalidraw -->
+          <div class="details-container bg-white p-6 rounded-2xl shadow-lg">
+            <h2 class="text-2xl font-bold">Outils design UI/UX</h2>
+            <div class="article-container mt-4 space-y-4">
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Figma</h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Canva</h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Excalidraw</h3>
+                  <p class="text-gray-600">Expérimenté</p>
+                  </div>
+                  </article>
+                  </div>
+                  </div>
+
+          <!-- Outils et DevOps -->
+          <div class="details-container bg-white p-6 rounded-2xl shadow-lg">
+            <h2 class="text-2xl font-bold">Outils et DevOps</h2>
+            <div class="article-container mt-4 space-y-4">
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Git</h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">GitHub</h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">GitLab</h3>
+                  <p class="text-gray-600">Base</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Linux</h3>
+                  <p class="text-gray-600">Expérimenté</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">CI/CD</h3>
+                  <p class="text-gray-600">Intermédiaire</p>
+                  </div>
+                  </article>
+              <article class="flex items-center gap-4">
+                <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon w-6 h-6" />
+                <div>
+                  <h3 class="text-lg font-semibold">Docker</h3>
+                  <p class="text-gray-600">Base</p>
+                  </div>
+              </article>
+              </div>
+              </div>
+              </div>
+      </div>
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon w-12 h-12 ml-auto mt-12 cursor-pointer"
+        onclick="location.href='./#projects'" />
+      </div>
+  </section>
+  <!-- Projects Section -->
+  <section id="projects" class="min-h-screen flex items-center justify-center py-20">
+    <div class="container mx-auto px-4">
+      <p class="text-lg text-gray-600 text-center">Parcourir mes récents</p>
+      <h1 class="text-5xl font-bold text-center mt-4">Projets</h1>
+      <div class="experience-details-container mt-12">
+        <div class="about-containers grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Projet 1 -->
+          <div class="details-container bg-white p-6 rounded-2xl shadow-lg">
+            <div class="article-container">
+              <img src="./assets/project-1.png" alt="Project 1" class="project-img rounded-lg w-full h-50 object-cover" />
+              </div>
+            <h2 class="text-2xl font-bold mt-4">TchadiCash</h2>
+            <div class="btn-container flex gap-4 mt-4">
+              <button
+                class="btn border border-gray-900 text-gray-900 px-4 py-2 rounded-full hover:bg-gray-900 hover:text-white transition-all"
+                onclick="location.href='https://github.com/cherifissa/'">
+                Github
+              </button>
+              <button class="btn bg-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition-all"
+                onclick="location.href='https://tchadicash.ssiofficiel.com/'">
+                Live Demo
+              </button>
+              </div>
+              </div>
+          <!-- Projet 2 -->
+          <div class="details-container bg-white p-6 rounded-2xl shadow-lg">
+            <div class="article-container">
+              <img src="./assets/project-2.png" alt="Project 2" class="project-img rounded-lg w-full h-50 object-cover" />
+              </div>
+            <h2 class="text-2xl font-bold mt-4">ssiofficiel</h2>
+            <div class="btn-container flex gap-4 mt-4">
+              <button
+                class="btn border border-gray-900 text-gray-900 px-4 py-2 rounded-full hover:bg-gray-900 hover:text-white transition-all"
+                onclick="location.href='https://github.com/cherifissa'">
+                Github
+              </button>
+              <button class="btn bg-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition-all"
+                onclick="location.href='https://ssiofficiel.com/'">
+                Live Demo
+              </button>
+              </div>
+              </div>
+          <!-- Projet 3 -->
+          <div class="details-container bg-white p-6 rounded-2xl shadow-lg">
+            <div class="article-container">
+              <img src="./assets/project-3.png" alt="Project 3" class="project-img rounded-lg w-full h-50 object-cover" />
+              </div>
+            <h2 class="text-2xl font-bold mt-4">Rt visionnaire</h2>
+            <div class="btn-container flex gap-4 mt-4">
+              <button
+                class="btn border border-gray-900 text-gray-900 px-4 py-2 rounded-full hover:bg-gray-900 hover:text-white transition-all"
+                onclick="location.href='https://github.com/cherifissa'">
+                Github
+              </button>
+              <button class="btn bg-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition-all"
+                onclick="location.href='https://rtvisionnaire.com/'">
+                Live Demo
+              </button>
+              </div>
+              </div>
+            </div>
+      </div>
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon w-12 h-12 ml-auto mt-12 cursor-pointer"
+        onclick="location.href='./#contact'" />
+      </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="min-h-screen flex items-center justify-center py-20">
+    <div class="container mx-auto px-4">
+      <p class="text-lg text-gray-600 text-center">Entrer en contact</p>
+      <h1 class="text-5xl font-bold text-center mt-4">Contactez Moi</h1>
+      <div class="contact-info-upper-container bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto mt-12">
+        <div class="contact-info-container flex items-center gap-4 mb-4">
+          <img src="./assets/email.png" alt="Email icon" class="icon w-8 h-8" />
+          <p><a href="mailto:cherifissa36@gmail.com" class="text-gray-600 hover:text-gray-900">cherifissa36@gmail.com</a>
           </p>
         </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
-  </section>
-  <section id="experience">
-    <p class="section__text__p1">Explorer Moi</p>
-    <h1 class="title">Expérience</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <!-- Développement Frontend -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Développement Frontend</h2>
-          <div class="article-container">
-            <!-- HTML & CSS -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>HTML & CSS</h3>
-                <p>Expérimenté</p>
-              </div>
-            </article>
-
-            <!-- Flutter -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Flutter</h3>
-                <p>Expérimenté</p>
-              </div>
-            </article>
-
-            <!-- PHP -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>PHP</h3>
-                <p>Expérimenté</p>
-              </div>
-            </article>
-
-            <!-- React -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>React</h3>
-                <p>Base</p>
-              </div>
-            </article>
-          </div>
+        <div class="contact-info-container flex items-center gap-4 mb-4">
+          <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon w-8 h-8" />
+          <p><a href="https://www.linkedin.com/in/cherif-issa-mahamat-769336214/"
+              class="text-gray-600 hover:text-gray-900">LinkedIn</a></p>
         </div>
-
-        <!-- Développement Backend -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Développement Backend</h2>
-          <div class="article-container">
-            <!-- Node.js -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Node.js</h3>
-                <p>Intermédiaire</p>
-              </div>
-            </article>
-
-            <!-- Laravel -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Laravel</h3>
-                <p>Intermédiaire</p>
-              </div>
-            </article>
-
-            <!-- Django -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Django</h3>
-                <p>Intermédiaire</p>
-              </div>
-            </article>
-
-            <!-- Flask -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Flask</h3>
-                <p>Base</p>
-              </div>
-            </article>
-
-            <!-- FastAPI -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>FastAPI</h3>
-                <p>Base</p>
-              </div>
-            </article>
-          </div>
+        <div class="contact-info-container flex items-center gap-4">
+          <img src="./assets/whatsapp.png" alt="WhatsApp icon" class="icon w-8 h-8" />
+          <p><a href="https://wa.link/vi2lk9" class="text-gray-600 hover:text-gray-900">WhatsApp</a></p>
         </div>
-
-        <!-- Intelligence Artificielle (IA) -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Intelligence Artificielle (IA)</h2>
-          <div class="article-container">
-            <!-- Python -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Python</h3>
-                <p>Expérimenté</p>
-              </div>
-            </article>
-
-            <!-- Machine Learning -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Machine Learning</h3>
-                <p>Intermédiaire</p>
-              </div>
-            </article>
-
-            <!-- Deep Learning -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Deep Learning</h3>
-                <p>Base</p>
-              </div>
-            </article>
-
-            <!-- Power BI -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Power BI</h3>
-                <p>Intermédiaire</p>
-              </div>
-          </div>
-          <br>
-          <!-- Tableau -->
-          <article>
-            <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-            <div>
-              <h3>Tableau</h3>
-              <p>Base</p>
-            </div>
         </div>
+      <div class="details-container bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto mt-12">
+        <div class="contact-form">
+          <form action="#" method="POST" class="space-y-4">
+            <label for="name" class="block text-gray-600">Nom :</label>
+            <input type="text" id="name" name="name" required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-900" />
 
-        <!-- Base de Données -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Base de Données</h2>
-          <div class="article-container">
-            <!-- MySQL -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>MySQL</h3>
-                <p>Expérimenté</p>
-              </div>
-            </article>
+            <label for="email" class="block text-gray-600">Email :</label>
+            <input type="email" id="email" name="email" required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-900" />
 
-            <!-- PostgreSQL -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>PostgreSQL</h3>
-                <p>Base</p>
-              </div>
-            </article>
+            <label for="subject" class="block text-gray-600">Sujet :</label>
+            <input type="text" id="subject" name="subject" required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-900" />
 
-            <!-- SQLite -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>SQLite</h3>
-                <p>Expérimenté</p>
-              </div>
-            </article>
+            <label for="message" class="block text-gray-600">Message :</label>
+            <textarea id="message" name="message" required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-900"></textarea>
 
-            <!-- MongoDB -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>MongoDB</h3>
-                <p>Intermédiaire</p>
-              </div>
-            </article>
-          </div>
+            <button type="submit"
+              class="w-full bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-all">Envoyer</button>
+            </form>
         </div>
-
-        <!-- Outils et DevOps -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Outils et DevOps</h2>
-          <div class="article-container">
-            <!-- Git -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Git</h3>
-                <p>Intermédiaire</p>
-              </div>
-            </article>
-
-            <!-- GitHub -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>GitHub</h3>
-                <p>Intermédiaire</p>
-              </div>
-            </article>
-
-            <!-- GitLab -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>GitLab</h3>
-                <p>Base</p>
-              </div>
-            </article>
-
-            <!-- Linux -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Linux</h3>
-                <p>Expérimenté</p>
-              </div>
-            </article>
-
-            <!-- CI/CD -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>CI/CD</h3>
-                <p>Intermédiaire</p>
-              </div>
-            </article>
-
-            <!-- Docker -->
-            <article>
-              <img src="./assets/checkmark.png" alt="Icône d'expérience" class="icon" />
-              <div>
-                <h3>Docker</h3>
-                <p>Base</p>
-              </div>
-
-
-          </div>
         </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
-  </section>
-  <section id="projects">
-    <p class="section__text__p1">Parcourir mes récents</p>
-    <h1 class="title">Projects</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">TchadiCash</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/cherifissa/'">
-              Github
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://tchadicash.ssiofficiel.com/'">
-              Live Demo
-            </button>
-          </div>
-        </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">ssiofficiel</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/cherifissa'">
-              Github
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://ssiofficiel.com/'">
-              Live Demo
-            </button>
-          </div>
-        </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Rt visionnaire</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/cherifissa'">
-              Github
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://rtvisionnaire.com/'">
-              Live Demo
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
-  </section>
-  <section id="contact">
-    <p class="section__text__p1">Entrer en contact</p>
-    <h1 class="title">Contactez Moi</h1>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:examplemail@gmail.com">cherifissa36@gmail.com</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com/in/cherif-issa-mahamat-769336214/">LinkedIn</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/whatsapp.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://wa.link/vi2lk9">WhatsApp</a></p>
-      </div>
-    </div>
-    <div class="contact-form">
-
-      <form action="#" method="POST">
-        <!-- Champ Nom -->
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required>
-
-        <!-- Champ Email -->
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-
-        <!-- Champ Sujet -->
-        <label for="subject">Sujet :</label>
-        <input type="text" id="subject" name="subject" required>
-
-        <!-- Champ Message -->
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <!-- Bouton d'envoi -->
-        <button type="submit">Envoyer</button>
-      </form>
     </div>
   </section>
-  <footer>
-    <nav>
-      <div class="nav-links-container">
-        <ul class="nav-links">
-          <li><a href="#about">A Propos de Moi</a></li>
-          <li><a href="#experience">Expérience</a></li>
-          <li><a href="#projects">Projets</a></li>
-          <li><a href="#contact">Contact</a></li>
+  <!-- Footer -->
+  <footer class="bg-white py-8 mt-20 shadow-md bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <nav>
+        <ul class="nav-links flex justify-center space-x-8">
+          <li><a href="#about" class=" hover:text-gray-900">A Propos de Moi</a></li>
+          <li><a href="#experience" class=" hover:text-gray-900">Expérience</a></li>
+          <li><a href="#projects" class=" hover:text-gray-900">Projets</a></li>
+          <li><a href="#contact" class=" hover:text-gray-900">Contact</a></li>
         </ul>
-      </div>
-    </nav>
-    <p>Copyright &#169; 2025 Cherif issa. Tous droits réservés.</p>
+      </nav>
+      <p class="text-center mt-4">Copyright &#169; 2023 Cherif issa. Tous droits réservés.</p>
+    </div>
   </footer>
-  <script src="script.js"></script>
+  <script>
+    function toggleMenu() {
+      const menuLinks = document.querySelector('.menu-links');
+      menuLinks.classList.toggle('hidden');
+    }
+  </script>
 </body>
 
 </html>
